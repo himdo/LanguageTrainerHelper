@@ -49,17 +49,9 @@ class TextToSpeech:
         )
 
     def Generate(self, text, outputDir):
-        # decide the input sentence by yourself
-        # print(f"Input your favorite sentence in {lang}.")
-        # x = 'こんにちは 試運転です' #input()
-
         # synthesis
         with torch.no_grad():
-            # start = time.time()
             wav = self.text2speech(text)["wav"]
-        # rtf = (time.time() - start) / (len(wav) / self.text2speech.fs)
-        # print(f"RTF = {rtf:5f}")
-
 
         from scipy.io.wavfile import write
         write(outputDir, self.text2speech.fs, wav.view(-1).cpu().numpy())
