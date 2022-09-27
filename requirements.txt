@@ -1,0 +1,9 @@
+espnet==0.10.6 
+pypinyin==0.44.0 
+parallel_wavegan==0.5.4 
+gdown==4.4.0 
+espnet_model_zoo
+pyopenjtalk==0.2
+# Translator Uses
+transformers
+sacremoses
