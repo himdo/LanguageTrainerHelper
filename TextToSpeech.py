@@ -46,13 +46,16 @@ class TextToSpeech:
 
     def Generate(self, text, outputDir):
         # synthesis
-        with torch.no_grad():
-            wav = self.text2speech(text)["wav"]
+        try:
+            with torch.no_grad():
+                wav = self.text2speech(text)["wav"]
 
-        from scipy.io.wavfile import write
-        write(outputDir, self.text2speech.fs, wav.view(-1).cpu().numpy())
-        return True
+            from scipy.io.wavfile import write
+            write(outputDir, self.text2speech.fs, wav.view(-1).cpu().numpy())
+            return True
+        except:
+            return False
 
-# t2s = TextToSpeech(Languages.Japanese)
 # "Hello this is a test" Google Translate
+# t2s = TextToSpeech(Languages.Japanese)
 # t2s.Generate('こんにちは、テストです', 'a.wav')

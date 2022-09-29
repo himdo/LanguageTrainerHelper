@@ -33,6 +33,7 @@ There is multiple ways to get this to work, the first is:
 - [x] Text To Speech (Japanese)
 - [x] Text To Speech (Mandarin)
 - [x] Take Microphone Input and save it
+- [x] Play Audio from a given file
 - [ ] Main program to wrap this all together
 
 ## Todo
