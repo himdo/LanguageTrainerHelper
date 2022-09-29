@@ -4,7 +4,7 @@ from scipy.io.wavfile import read
 import numpy as np
 
 class PlayAudio:
-    def play(self, filePath):
+    def play(filePath):
         try:
             samplerate, wf_data = read(filePath)
 
