@@ -7,3 +7,5 @@ pyopenjtalk==0.2
 # Translator Uses
 transformers
 sacremoses
+pyaudio
+wave

@@ -16,7 +16,7 @@ class SpeechToText:
     # This returns a string or False if something went wrong
     def GenerateText(self, pathToFile):
         try:
-            os.system('whisper ' + str(pathToFile) + ' --language ' + self.lang + ' -- task translate')
+            os.system('whisper ' + str(pathToFile) + ' --language ' + self.lang + ' --task translate')
             textPath = str(pathToFile) + '.txt'
             f = open(textPath, 'r', encoding="utf-8")
             fileContents = ""
@@ -30,5 +30,5 @@ class SpeechToText:
         except:
             return False
 
-# stt = SpeechToText(Languages.Japanese)
-# print(stt.GenerateText('./a.wav'))
+# stt = SpeechToText(Languages.English)
+# print(stt.GenerateText('./voice.wav'))

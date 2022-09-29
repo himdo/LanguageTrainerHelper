@@ -32,7 +32,7 @@ There is multiple ways to get this to work, the first is:
 - [x] Text To Speech (English)
 - [x] Text To Speech (Japanese)
 - [x] Text To Speech (Mandarin)
-- [ ] Take Microphone Input and save it
+- [x] Take Microphone Input and save it
 - [ ] Main program to wrap this all together
 
 ## Todo
