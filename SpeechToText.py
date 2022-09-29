@@ -1,18 +1,24 @@
 import os
+from Languages import Languages
 
 class SpeechToText:
     # This is using whisper as the main model
     # For this to work you need to setup and install whisper to your system, see https://github.com/openai/whisper#setup
 
-    def __init__(self):
-        self.lang = 'English'
+    def __init__(self, language=Languages.English):
+        if language == Languages.Japanese:
+            self.lang = 'Japanese'
+        elif language == Languages.English:
+            self.lang = 'English'
+        elif language == Languages.Mandarin:
+            self.lang = 'Chinese'
     
     # This returns a string or False if something went wrong
     def GenerateText(self, pathToFile):
         try:
-            os.system('whisper ' + str(pathToFile) + ' --language ' + self.lang)
+            os.system('whisper ' + str(pathToFile) + ' --language ' + self.lang + ' -- task translate')
             textPath = str(pathToFile) + '.txt'
-            f = open(textPath)
+            f = open(textPath, 'r', encoding="utf-8")
             fileContents = ""
             for x in f:
                 fileContents += x
@@ -24,5 +30,5 @@ class SpeechToText:
         except:
             return False
 
-# stt = SpeechToText()
-# print(stt.GenerateText('./jfk.flac'))
+# stt = SpeechToText(Languages.Japanese)
+# print(stt.GenerateText('./a.wav'))

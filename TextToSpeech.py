@@ -2,12 +2,8 @@ from espnet2.bin.tts_inference import Text2Speech
 from espnet2.utils.types import str_or_none
 # import time
 import torch
+from Languages import Languages
 
-class Languages:
-    Japanese = 'Japanese'
-    English = 'English'
-    Mandarin = 'Mandarin'
-    
 class TextToSpeech:
     def __init__(self, language):
         if language == Languages.Japanese:
@@ -58,4 +54,5 @@ class TextToSpeech:
         return True
 
 # t2s = TextToSpeech(Languages.Japanese)
-# t2s.Generate('こんにちは 試運転です', 'a.wav')
+# "Hello this is a test" Google Translate
+# t2s.Generate('こんにちは、テストです', 'a.wav')

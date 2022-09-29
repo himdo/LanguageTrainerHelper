@@ -21,13 +21,18 @@ There is multiple ways to get this to work, the first is:
 
 ## Whats Implemented (MVP):
 - [ ] Speech To Text (English)
+    - [x] Implement MVP
+    - [ ] Implement a more complete version
 - [ ] Speech To Text (Japanese)
+    - [x] Implement MVP
+    - [ ] Implement a more complete version
 - [x] Translation (English to Japanese)
-- [ ] Translation (Japanese to English)
+- [x] Translation (Japanese to English)
 - [x] Implement GPT-J
 - [x] Text To Speech (English)
 - [x] Text To Speech (Japanese)
 - [x] Text To Speech (Mandarin)
+- [ ] Take Microphone Input and save it
 - [ ] Main program to wrap this all together
 
 ## Todo
