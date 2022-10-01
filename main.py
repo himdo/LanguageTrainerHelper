@@ -31,7 +31,7 @@ class MainClass:
 \tAI: I am an AI created by OpenAI. How can I help you today?\n""" 
         while True:
             trueText = trueTextOriginal
-            text = input()
+            text = input("Human: ")
             conversation.append(text)
             # trueText = 'The following is a conversation between a human and an AI chatbot.  The chatbot is a sport psychologist who specializes in people who are struggling with overthinking their role on a team which eventually sabotages their output. The chatbot will provide psychological science-based advice to help its patients to become better.\nHuman: ' + text + '\nAI Doctor: '
             
@@ -49,7 +49,7 @@ class MainClass:
 
             gptData = {
                 'prompt': trueText,
-                'max_length': (int) (len(trueText)/3) + 20, # This pretty much makes sure to only generate 1 to 2 sentence more then whats needed
+                'max_length': (int) (len(trueText)/3) + 100, # This pretty much makes sure to only generate 1 to 2 sentence more then whats needed
                 'top_p': 0.7,
                 'top_k': 0,
                 'temperature': 0.8,
@@ -65,7 +65,7 @@ class MainClass:
             response = response.split('Human:')[1+(int)((len(conversation) + 1)/2)].split('AI:')[1].strip()
             # print('!!!!!')
             self.TextToSpeech.Generate(text=response, outputDir='voice.wav')
-            print(response)
+            print("AI: " + response)
             PlayAudio.play('voice.wav')
             # print('!!!!!')
 

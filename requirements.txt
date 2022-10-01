@@ -9,3 +9,5 @@ transformers
 sacremoses
 pyaudio
 wave
+
+git+https://github.com/openai/whisper.git
